@@ -3,7 +3,8 @@ source "${SRC_PATH}/reporting/colors.bash"
 function print_help() {
   cat <<-EOD
   ${BOLD}Unisketch Command-Line Interface${RESET_COLOR}
-  v${VERSION}, ${GIT_REPOSITORY_URL}
+  v${VERSION} (commit SHA: ${COMMIT_SHA})
+  ${GIT_REPOSITORY_URL}
 
     unisketch help                    Display this help message.
     unisketch init                    Creates a new \`.unisketch.yml\` file on the repository

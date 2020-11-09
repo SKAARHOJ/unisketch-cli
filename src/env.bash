@@ -1,2 +1,3 @@
 VERSION="0.0.1"
+COMMIT_SHA="ed6fb6518c1e436d51d02ff210c65cbc2a6c24d3"
 GIT_REPOSITORY_URL="github.com/SKAARHOJ/unisketch-cli"

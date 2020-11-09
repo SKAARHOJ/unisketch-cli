@@ -5,7 +5,7 @@ Unisketch development ninja.
 ## Installation
 
 ```sh
-$ git clone https://github.com/SKAARHOJ/unisketch-cli.git ~/unisketch-cli && bash ~/unisketch-cli/unisketch
+$ git clone https://github.com/SKAARHOJ/unisketch-cli.git ~/unisketch-cli && sh ~/unisketch-cli/tools/install.sh
 ```
 
 ## Introduction

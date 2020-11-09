@@ -1,3 +1,3 @@
 INSTALLATION_PATH="~/unisketch-cli"
 
-ln -s /usr/local/bin/unisketch ~/unisketch-cli/unisketch
+ln -s ~/unisketch-cli/unisketch /usr/local/bin/unisketch

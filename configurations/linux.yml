@@ -1,0 +1,17 @@
+build:
+  path: ./build
+  cmake:
+    args: ''
+  ninja:
+    args: ''
+fetch:
+  python_interpreter: python3.7
+  defaults: 
+    cid: 6b8fe01b766cef024909cad0699b27d2
+device:
+  type: rcpv2
+  path: \\.\COM4
+  debug_probe:
+    path: \\.\COM3
+logging:
+  path: ./.logs/output.log

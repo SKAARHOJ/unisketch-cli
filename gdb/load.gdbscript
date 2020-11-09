@@ -1,0 +1,6 @@
+target extended-remote {{ device_debug_probe_path }}
+monitor swdp_scan
+attach 1
+load {{ build_path }}/firmware.elf
+detach
+quit

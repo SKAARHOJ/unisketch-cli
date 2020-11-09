@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+nulldevice="/dev/null"
+
+CLI_INSTALLATION_PATH=`dirname $0`
+
+SRC_PATH="${CLI_INSTALLATION_PATH}/src"
+TMP_PATH="${CLI_INSTALLATION_PATH}/.tmp"
+
+LOG_FILE=$nulldevice
+
+source "${SRC_PATH}/env.bash"
+source "${SRC_PATH}/bootstrap.bash"
+
+bootstrap "$@"

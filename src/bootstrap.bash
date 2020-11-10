@@ -7,8 +7,11 @@ source "${SRC_PATH}/commands/help.bash"
 source "${SRC_PATH}/commands/attach.bash"
 source "${SRC_PATH}/commands/init.bash"
 source "${SRC_PATH}/commands/clean.bash"
+source "${SRC_PATH}/config/prerequisites.bash"
 
 function bootstrap() {
+  assert_prerequisites
+
   if [ "$#" -lt 1 ]
   then
     print_help

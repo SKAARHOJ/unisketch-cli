@@ -14,7 +14,7 @@ function clean() {
   /usr/bin/git checkout -- \
     "./ArduinoLibs/SkaarhojUniSketch/SK_CTRL_${device_type^^}.h" \
     "./ArduinoLibs/SkaarhojUniSketch/SK_CFGDEF_${device_type^^}.h" \
-    "./Software/Unisketch/Unisketch.ino"
+    "./Software/UniSketch/UniSketch.ino"
 
   report_status "Cleaning up build artifacts..."
   report_metadata "Build path" $build_path

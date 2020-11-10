@@ -12,7 +12,7 @@ function attach() {
 
   create_gdb_debug_script $gdbscript
 
-  report_status "Loading and starting the executable on the device..."
+  report_status "Attaching GDB to the external executable..."
   report_metadata "Blackmagic Debug Probe (BDP) path" $device_debug_probe_path
   run_gdb interactive $gdbscript
   remove_gdb_script $gdbscript

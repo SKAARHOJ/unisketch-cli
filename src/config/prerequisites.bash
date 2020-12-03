@@ -2,7 +2,7 @@ source "${SRC_PATH}/reporting/colors.bash"
 source "${SRC_PATH}/reporting/crash.bash"
 
 function assert_prerequisites() {
-  programs=(jq yq arm-none-eabi-gdb jinja2 cmake ninja)
+  programs=(jq yq arm-none-eabi-gdb jinja2 cmake ninja git)
 
   for each_program in $programs
   do

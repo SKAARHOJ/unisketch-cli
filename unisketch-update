@@ -1,0 +1,6 @@
+#!/bin/bash
+
+SCRIPT_PATH=`realpath $( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )/unisketch`
+CLI_INSTALLATION_PATH=`dirname ${SCRIPT_PATH}`
+
+git pull --git-dir ${CLI_INSTALLATION_PATH} origin master

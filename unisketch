@@ -5,11 +5,8 @@ nulldevice="/dev/null"
 SCRIPT_PATH=`realpath $( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )/unisketch`
 CLI_INSTALLATION_PATH=`dirname ${SCRIPT_PATH}`
 
-
 SRC_PATH="${CLI_INSTALLATION_PATH}/src"
 TMP_PATH="${CLI_INSTALLATION_PATH}/.tmp"
-
-LOG_FILE=$nulldevice
 
 source "${SRC_PATH}/env.bash"
 source "${SRC_PATH}/bootstrap.bash"

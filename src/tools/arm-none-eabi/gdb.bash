@@ -1,6 +1,4 @@
 function run_gdb() {
-  log_file=$(read_config .logging.path)
-
   if [ "$OSTYPE" = "cygwin" ];
   then
     given_path=$(cygpath -d $2)
@@ -10,7 +8,7 @@ function run_gdb() {
 
   case "$1" in
     headless )
-      arm-none-eabi-gdb -x $given_path >> $log_file 2>&1
+      arm-none-eabi-gdb -x $given_path >> $LOG_FILE 2>&1
       ;;
     interactive )
       arm-none-eabi-gdb -x $given_path

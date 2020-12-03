@@ -2,6 +2,8 @@
 
 Unisketch development ninja.
 
+[![asciicast](https://asciinema.org/a/ZQbl4kze91YdZr6moz26In3vE.svg)](https://asciinema.org/a/ZQbl4kze91YdZr6moz26In3vE?speed=2&cols=80&rows=120&loop=true&autoplay=true&t=3)
+
 ## Usage
 
 #### Dependencies
@@ -61,4 +63,3 @@ logging:
 - `device.type`: Type of the device connected.
 - `device.path`: In *\*nix* systems, path to the character device connected via USB. In *Windows*, the root COM port path.
 - `device.debug_probe.path`: In *\*nix* systems, path to the character device connected via *Blackmagic Debug Probe (BDP)*. In Windows, the root COM port path.
-- `logging.path`: Log file to sink the logs of underlying executables. **Optional.**

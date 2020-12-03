@@ -6,7 +6,7 @@ function attach() {
   assert_configuration_exists
 
   gdbscript="${TMP_PATH}/debug.gdbscript"
-  device_debug_probe_path=$(read_config .device.debug_probe.path)
+  device_debug_probe_path=$(read_config .devices[0].debug_probe.path)
 
   report_status "Creating a GDB script..."
 

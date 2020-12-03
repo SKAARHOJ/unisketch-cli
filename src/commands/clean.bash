@@ -6,7 +6,7 @@ function clean() {
   assert_configuration_exists
 
   build_path=$(read_config .build.path)
-  device_type=$(read_config .device.type)
+  device_type=$(read_config .devices[0].type)
 
   report_status "Cleaning up fetch configuration overrides..."
   report_metadata "Device type" $device_type

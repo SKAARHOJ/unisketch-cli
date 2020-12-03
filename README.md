@@ -2,7 +2,18 @@
 
 Unisketch development ninja.
 
-## Installation
+## Usage
+
+#### Dependencies
+
+- [`jinja2-cli`](https://github.com/mattrobenolt/jinja2-cli)
+- [`jq`](https://stedolan.github.io/jq/)
+- [`yq`](https://github.com/mikefarah/yq)
+- ARM Toolchain 9, 2019, Q4 Major, must be available in `$PATH`, e.g. `arm-none-eabi-gdb`
+- CMake v3.17.3, or higher, must be available in `$PATH` as `cmake`
+- Ninja v1.10.1, or higher, must be available in `$PATH` as `ninja`
+
+#### Installation
 
 ```sh
 $ git clone https://github.com/SKAARHOJ/unisketch-cli.git ~/unisketch-cli && sh ~/unisketch-cli/tools/install.sh

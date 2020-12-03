@@ -7,7 +7,7 @@ function run() {
   assert_configuration_exists
 
   gdbscript="${TMP_PATH}/load.gdbscript"
-  device_debug_probe_path=$(read_config .device.debug_probe.path)
+  device_debug_probe_path=$(read_config .devices[0].debug_probe.path)
 
   build
 

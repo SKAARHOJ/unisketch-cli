@@ -8,8 +8,8 @@ function build() {
   build_path=$(read_config .build.path)
   cmake_args=$(read_config .build.cmake.args)
   ninja_args=$(read_config .build.ninja.args)
-  cid=$(read_config .fetch.defaults.cid)
-  device_type=$(read_config .device.type)
+  cid=$(read_config .devices[0].cid)
+  device_type=$(read_config .devices[0].type)
   log_file=$(read_config .logging.path)
 
   report_status "Fetching the templated files from platform..."

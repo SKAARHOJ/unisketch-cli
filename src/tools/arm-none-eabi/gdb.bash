@@ -32,7 +32,7 @@ function render_template() {
 }
 
 function create_gdb_load_script() {
-  device_debug_probe_path=$(read_config .device.debug_probe.path)
+  device_debug_probe_path=$(read_config .devices[0].debug_probe.path)
   build_path=$(read_config .build.path)
   output_file=$1
 
@@ -45,7 +45,7 @@ function create_gdb_load_script() {
 }
 
 function create_gdb_debug_script() {
-  device_debug_probe_path=$(read_config .device.debug_probe.path)
+  device_debug_probe_path=$(read_config .devices[0].debug_probe.path)
   build_path=$(read_config .build.path)
   output_file=$1
 

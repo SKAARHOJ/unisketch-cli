@@ -12,6 +12,7 @@ Unisketch development ninja.
 - ARM Toolchain 9, 2019, Q4 Major, must be available in `$PATH`, e.g. `arm-none-eabi-gdb`
 - CMake v3.17.3, or higher, must be available in `$PATH` as `cmake`
 - Ninja v1.10.1, or higher, must be available in `$PATH` as `ninja`
+- Git v2.24.3, or higher, must be available in `$PATH` as `git`
 
 #### Installation
 

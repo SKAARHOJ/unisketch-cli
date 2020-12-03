@@ -1,8 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 nulldevice="/dev/null"
 
-CLI_INSTALLATION_PATH=`dirname $0`
+SCRIPT_PATH=`realpath $( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )/unisketch`
+CLI_INSTALLATION_PATH=`dirname ${SCRIPT_PATH}`
+
 
 SRC_PATH="${CLI_INSTALLATION_PATH}/src"
 TMP_PATH="${CLI_INSTALLATION_PATH}/.tmp"

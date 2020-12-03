@@ -2,7 +2,7 @@ source "${SRC_PATH}/reporting/colors.bash"
 source "${SRC_PATH}/reporting/crash.bash"
 
 function assert_prerequisites() {
-  programs=(tq arm-none-eabi-gdb jinja2)
+  programs=(yq jq arm-none-eabi-gdb jinja2)
 
   for each_program in $programs
   do

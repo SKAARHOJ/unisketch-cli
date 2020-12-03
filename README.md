@@ -2,8 +2,6 @@
 
 Unisketch development ninja.
 
-[![asciicast](https://asciinema.org/a/ZQbl4kze91YdZr6moz26In3vE?speed=2&cols=80&rows=120&loop=true&autoplay=true&t=3)](https://asciinema.org/a/ZQbl4kze91YdZr6moz26In3vE?speed=2&cols=80&rows=120&loop=true&autoplay=true&t=3)
-
 ## Usage
 
 #### Dependencies
@@ -52,6 +50,8 @@ device:
 logging:
   path: ./.logs/output.log
 ```
+
+[![asciicast](https://asciinema.org/a/ZQbl4kze91YdZr6moz26In3vE.svg)](https://asciinema.org/a/ZQbl4kze91YdZr6moz26In3vE?speed=2&cols=80&rows=60&loop=true&autoplay=true&t=3)
 
 ## Configuration
 

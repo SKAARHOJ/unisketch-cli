@@ -52,7 +52,7 @@ logging:
   path: ./.logs/output.log
 ```
 
-[![asciicast](https://asciinema.org/a/ZQbl4kze91YdZr6moz26In3vE.svg)](https://asciinema.org/a/ZQbl4kze91YdZr6moz26In3vE?speed=3&cols=120&rows=60&loop=true&autoplay=true&t=3)
+[![asciicast](https://asciinema.org/a/ZQbl4kze91YdZr6moz26In3vE.svg)](https://asciinema.org/a/ZQbl4kze91YdZr6moz26In3vE?speed=3&cols=60&rows=60&loop=true&autoplay=true&t=3)
 
 ## Configuration
 

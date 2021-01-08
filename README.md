@@ -36,18 +36,23 @@ Here is an example of a `.unisketch.yml` file:
 build:
   path: ./build
   cmake:
+    build_type: MinSizeRel
     args: ''
   ninja:
     args: ''
 fetch:
   python_interpreter: python3.7
-  defaults: 
+devices:
+  - type: rackfusionlive
+    path: \\.\COM13
+    cid: e947261acdd73d4dfb7cb6ab83bc9fdb
+    debug_probe:
+      path: \\.\COM12
+  - type: rcpv2
+    path: \\.\COM4
     cid: 6b8fe01b766cef024909cad0699b27d2
-device:
-  type: rcpv2
-  path: \\.\COM4
-  debug_probe:
-    path: \\.\COM3
+    debug_probe:
+      path: \\.\COM3
 logging:
   path: ./.logs/output.log
 ```

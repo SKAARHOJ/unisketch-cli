@@ -57,10 +57,11 @@ logging:
 ## Configuration
 
 - `build.path`: Directory to put the build artifacts.
+- `build.cmake.build_type`: *CMake* build type, such as `MinSizeRel` or `Debug`.
 - `build.cmake.args`: Extra arguments to be provided to *CMake*.
 - `build.ninja.args`: Extra arguments to be provided to *Ninja*.
 - `fetch.python_interpreter`: Path to Python interpreter to run the `fetch.py` script.
-- `fetch.defaults.cid`: CID to be used in the `fetch.py` script.
-- `device.type`: Type of the device connected.
-- `device.path`: In *\*nix* systems, path to the character device connected via USB. In *Windows*, the root COM port path.
-- `device.debug_probe.path`: In *\*nix* systems, path to the character device connected via *Blackmagic Debug Probe (BDP)*. In Windows, the root COM port path.
+- `devices[].type`: Type of the device connected.
+- `devices[].cid`: CID to be used in the `fetch.py` script.
+- `devices[].path`: In *\*nix* systems, path to the character device connected via USB. In *Windows*, the root COM port path.
+- `devices[].debug_probe.path`: In *\*nix* systems, path to the character device connected via *Blackmagic Debug Probe (BDP)*. In Windows, the root COM port path.

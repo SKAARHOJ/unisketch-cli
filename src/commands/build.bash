@@ -9,41 +9,67 @@ function build() {
 
   build_path=$(read_config .build.path)
   cmake_args=$(read_config .build.cmake.args)
+  cmake_build_type=$(read_config .build.cmake.build_type)
   ninja_args=$(read_config .build.ninja.args)
   cid=$(read_config .devices[0].cid)
   device_type=$(read_config .devices[0].type)
+  argv=( "$@" )
 
-  report_status "Fetching the templated files from platform..."
-  report_metadata "CID" $cid
-  report_metadata "Device type" $device_type
-
-  # Running the fetch script
-  run_fetch_script $cid &> $LOG_FILE
-
-  if (( $? ))
+  if [[ ! " ${argv[@]} " =~ " --no-fetch " ]]
   then
-    crash 1 "Cannot fetch the device configuration."
+    prompt "Would you like to fetch the configuration?" "Y/n"
+    read should_fetch_the_configuration
+
+    prompt "Would you like to prepare the build?" "Y/n"
+    read should_configure
+
+    if [[ "$should_fetch_the_configuration" != "n" || "`tty`" == "not a tty" ]];
+    then 
+      report_status "Fetching the templated files from platform..."
+      report_metadata "CID" $cid
+      report_metadata "Device type" $device_type
+
+      # Running the fetch script
+      run_fetch_script $cid &> $LOG_FILE
+
+      if (( $? ))
+      then
+        crash 1 "Cannot fetch the device configuration."
+      fi
+    fi
+  else
+    report_status "Skipping fetching device configuration."
+    report_metadata "The following flag is provided" "--no-fetch"
   fi
 
-  report_status "Preparing a build..."
-
-  if [ -n "$cmake_args" ]
+  if [[ ! " ${argv[@]} " =~ " --no-configure " ]]
   then
-    report_metadata "Using extra arguments for CMake" $cmake_args
-  fi
+    if [[ "$should_configure" != "n" || "`tty`" == "not a tty" ]];
+    then 
+      report_status "Preparing a build..."
 
-  # Running CMake to configure the project
-  cmake \
-    $cmake_args \
-    -S. \
-    -B${build_path} \
-    -DCMAKE_BUILD_TYPE=DEBUG \
-    -DCMAKE_TOOLCHAIN_FILE=cmake/toolchain.cmake \
-    -GNinja > $LOG_FILE
+      if [ -n "$cmake_args" ]
+      then
+        report_metadata "Using extra arguments for CMake" $cmake_args
+      fi
 
-  if (( $? ))
-  then
-    crash 1 "Configuration failed."
+      # Running CMake to configure the project
+      cmake \
+        $cmake_args \
+        -S. \
+        -B${build_path} \
+        -DCMAKE_BUILD_TYPE=${cmake_build_type} \
+        -DCMAKE_TOOLCHAIN_FILE=cmake/toolchain.cmake \
+        -GNinja > $LOG_FILE
+
+      if (( $? ))
+      then
+        crash 1 "Configuration failed."
+      fi
+    fi
+  else
+    report_status "Skipping build configuration."
+    report_metadata "The following flag is provided" "--no-configure"
   fi
 
   report_status "Building the project..."

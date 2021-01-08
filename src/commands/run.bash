@@ -2,6 +2,7 @@ source "${SRC_PATH}/config/read.bash"
 source "${SRC_PATH}/reporting/colors.bash"
 source "${SRC_PATH}/reporting/report.bash"
 source "${SRC_PATH}/tools/arm-none-eabi/gdb.bash"
+source "${SRC_PATH}/tools/blackmagic-debug-probe/usbreset.bash"
 
 function run() {
   assert_configuration_exists
@@ -9,7 +10,14 @@ function run() {
   gdbscript="${TMP_PATH}/load.gdbscript"
   device_debug_probe_path=$(read_config .devices[0].debug_probe.path)
 
-  build
+  build "$@"
+
+  if [ "$(uname)" = "Darwin" ];
+  then
+    report_status "Resetting USB devices..."
+    report_metadata "Target operating system" "$(uname)"
+    run_usbreset
+  fi
 
   report_status "Creating a GDB script..."
 

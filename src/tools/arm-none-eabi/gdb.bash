@@ -1,3 +1,5 @@
+GDB_RUNNING_TIMEOUT="30s"
+
 function run_gdb() {
   if [ "$OSTYPE" = "cygwin" ];
   then
@@ -8,7 +10,12 @@ function run_gdb() {
 
   case "$1" in
     headless )
-      arm-none-eabi-gdb -x $given_path >> $LOG_FILE 2>&1
+      timeout --signal=KILL $GDB_RUNNING_TIMEOUT arm-none-eabi-gdb -x $given_path >> $LOG_FILE 2>&1
+
+      if (( $? ))
+      then
+        crash 1 "GDB timed out to connect to the device."
+      fi
       ;;
     interactive )
       arm-none-eabi-gdb -x $given_path

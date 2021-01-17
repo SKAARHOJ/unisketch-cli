@@ -7,6 +7,7 @@ CLI_INSTALLATION_PATH=`dirname ${SCRIPT_PATH}`
 
 SRC_PATH="${CLI_INSTALLATION_PATH}/src"
 TMP_PATH="${CLI_INSTALLATION_PATH}/.tmp"
+PKG_PATH="${SRC_PATH}/extern"
 
 source "${SRC_PATH}/env.bash"
 source "${SRC_PATH}/bootstrap.bash"

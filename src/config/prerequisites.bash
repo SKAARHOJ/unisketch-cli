@@ -8,9 +8,9 @@ function assert_prerequisites() {
 
 function assert_dependencies() {
   if [[ $(uname) == "Darwin" ]]; then
-    programs=(jq yq arm-none-eabi-gdb jinja2 cmake ninja git usbreset)
+    programs=(jq yq arm-none-eabi-gdb jinja2 cmake ninja git nc sed tidy tail usbreset)
   else
-    programs=(jq yq arm-none-eabi-gdb jinja2 cmake ninja git)
+    programs=(jq yq arm-none-eabi-gdb jinja2 cmake ninja git nc sed tidy tail)
   fi
 
   for each_program in $programs

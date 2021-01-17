@@ -10,7 +10,7 @@ function run_gdb() {
 
   case "$1" in
     headless )
-      timeout --signal=KILL $GDB_RUNNING_TIMEOUT arm-none-eabi-gdb -x $given_path >> $LOG_FILE 2>&1
+      timeout --signal=KILL $GDB_RUNNING_TIMEOUT arm-none-eabi-gdb -x $given_path > $LOG_FILE 2>&1
 
       if (( $? ))
       then
